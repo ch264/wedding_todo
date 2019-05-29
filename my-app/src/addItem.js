@@ -18,7 +18,8 @@ class AddItem extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(this.state);
+		// pass in state object to function
+		this.props.addItemFunc(this.state);
 	}
 
 	render() {
