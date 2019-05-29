@@ -16,10 +16,21 @@ class App extends Component {
   addItemFunc = (item) => {
     // generate random id number between 0 and 1
     item.id = Math.random();
-    // create copy of array with spread operator and add on new item. Do not edit state directly.
-    let itemsArr = [...this.state.items, item]
+    // create copy of array with spread operator and add on new item. Do not edit state outside of setState.
+    let cake = [...this.state.cake, item];
+
     this.setState({
-      items: itemsArr
+      item: cake
+    })
+  }
+
+  deleteCake = (id) => {
+    let cake = this.state.cake.filter(cake => {
+      // id of cake we are cycling through is not equal to id.
+      return cake.id !== id
+    });
+    this.setState({
+      cake: cake
     })
   }
 
@@ -28,7 +39,7 @@ class App extends Component {
     <div className="App">
       <h1>Welcome</h1>
       {/* reference array and pass it down as props */}
-      <Cake cake={ this.state.cake } />
+      <Cake deleteCake={ this.deleteCake } cake={ this.state.cake } />
       <AddItem addItemFunc={this.addItemFunc}/>
     </div>
   );

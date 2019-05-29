@@ -4,7 +4,7 @@ import React from 'react';
 // pass props in as parameter
 const Cake = (props) => {
 	// destructuring props to variables
-	const { cake } = props;
+	const { cake, deleteCake } = props;
 	// // cycle through cakes array and map to new cakeList array
 	// const cakeList = cake.map(cake => {
 	
@@ -23,6 +23,8 @@ const Cake = (props) => {
 					<div>Baker</div>
 					<div>Budget</div>
 					<div>Cover: { cake.name }</div>
+					{/* function call surrounding function fires only on click event */}
+					<button onClick={() => {deleteCake(cake.id)}}>Delete Cake</button>
 	 			</div>
 		) : null
 	});
