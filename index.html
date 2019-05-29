@@ -18,11 +18,48 @@
 
 	<script type="text/babel">
 		class App extends React.Component {
+
+			state = {
+				name: 'Lina',
+				age: 31
+			}
+
+			// change to arrow function so that this is equal to component instance and access and change the state
+			handleClick = (e) => {
+				this.setState({
+					name: 'Hannah'
+				});
+				console.log(this.state)
+			}
+
+			handleCopy(e){
+				console.log('Please do not copy')
+			}
+
+			handleChange = (e) => {
+				this.setState({
+					name: e.target.value
+				})
+			}
+
+			handleSubmit = (e) => {
+				e.preventDefault();
+				console.log('form submitted' , this.form.name)
+			}
+
 			render() {
 				return (
 					<div className="app-content">
 						<h1>Hey, Brides and Grooms</h1>
-						<p>{ Math.random() * 10 }</p>
+						<p>My name is: { this.state.name }</p>
+
+						<form onSubmit={ this.handleSubmit }>
+							<input type="text" onChange={this.handleChange} />
+							<button>submit</button>
+						</form>
+						<button onClick={ this.handleClick }>Add Todo
+						</button>
+						<p onCopy={this.handleCopy}>Please do not copy</p>
 					</div>
 				)
 			}
