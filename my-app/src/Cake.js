@@ -18,7 +18,7 @@ const Cake = (props) => {
 	// })
 
 	const cakeList = cake.map(cake => {
-		return cake.id >1 ? (
+		return cake.id > 1 ? (
 				<div className="Cake" key={ cake.id}>
 					<div>Baker</div>
 					<div>Budget</div>
