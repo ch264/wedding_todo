@@ -4,12 +4,15 @@ import React, { Component } from 'react';
 import Cake from './Cake';
 import AddItem from './addItem';
 
+import Todos from './Todos';
+import AddTodo from './addForm'
+
 
 class App extends Component {
   state = {
-    cake: [
-      { name: 'sugar', id: 1},
-      { name: 'butter', id: 2}
+    todos: [
+      { content: 'sugar', id: 1},
+      { content: 'butter', id: 2}
     ]
   }
 
@@ -34,6 +37,15 @@ class App extends Component {
     })
   }
 
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== id // returns true keep
+    })
+    this.setState({
+      todos: todos
+    })
+  }
+
   componentDidMount(){
     console.log('component mounted');
   }
@@ -42,12 +54,16 @@ class App extends Component {
     console.log('components updated');
     console.log(prevProps, prevState);
   }
+
   render() {
   return (
-    <div className="App">
-      <h1>Welcome</h1>
+    <div className="App container">
+      <h1 className="center white-text">Wedding planning helper</h1>
+      <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+      <AddTodo />
+
       {/* reference array and pass it down as props */}
-      <Cake deleteCake={ this.deleteCake } cake={ this.state.cake } />
+      <Cake deleteCake={ this.deleteCake } cake={ this.state.todos } />
       <AddItem addItemFunc={this.addItemFunc}/>
     </div>
   );
