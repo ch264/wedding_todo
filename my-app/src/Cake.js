@@ -1,5 +1,6 @@
 // UI component, gets state and props from root 
 import React from 'react';
+import './Cake.css'
 
 // pass props in as parameter
 const Cake = (props) => {
@@ -24,7 +25,7 @@ const Cake = (props) => {
 					<div>Budget</div>
 					<div>Cover: { cake.name }</div>
 					{/* function call surrounding function fires only on click event */}
-					<button onClick={() => {deleteCake(cake.id)}}>Delete Cake</button>
+					<button onClick={ () => {deleteCake(cake.id)} }>Delete Cake</button>
 	 			</div>
 		) : null
 	});
