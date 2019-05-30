@@ -9,10 +9,10 @@ const Navbar = () => {
 			<div className="container">
 				<a className="brand-logo left">Wedding Todo</a>
 				<ul className="right">
-					<li><Link to="/">Home</Link></li>
-					<li><Link to="/about">About</Link></li>
-					<li><Link to="/contact">Contact</Link></li>
-					<li><Link to="/todo">Todo</Link></li>
+					<li><NavLink to="/">Home</NavLink></li>
+					<li><NavLink to="/about">About</navLink></li>
+					<li><NavLink to="/contact">Contact</NavLink></li>
+					<li><NavLink to="/todo">Todo</NavLink></li>
 
 				</ul>
 			</div>
