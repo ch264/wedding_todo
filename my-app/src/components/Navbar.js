@@ -10,7 +10,7 @@ const Navbar = () => {
 				<a className="brand-logo left">Wedding Todo</a>
 				<ul className="right">
 					<li><NavLink to="/">Home</NavLink></li>
-					<li><NavLink to="/about">About</navLink></li>
+					<li><NavLink to="/about">About</NavLink></li>
 					<li><NavLink to="/contact">Contact</NavLink></li>
 					<li><NavLink to="/todo">Todo</NavLink></li>
 
