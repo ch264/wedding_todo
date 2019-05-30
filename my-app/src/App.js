@@ -12,6 +12,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 
+import { BrowserRouter, Route } from 'react-router-dom'
+
 
 class App extends Component {
   state = {
@@ -73,20 +75,26 @@ class App extends Component {
 
   render() {
   return (
-    <div className="App container">
-      <Navbar />
-      <h1 className="center white-text">Wedding planning helper</h1>
-      <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
-      <AddTodo addTodo={this.addTodo} />
-    
-    
-    
-      {/* <AddItem addItemFunc={this.addItemFunc}/>
+    <BrowserRouter>
+      <div className="App container">
+        <Navbar />
+        {/* when user goes to path load in the component */}
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/contact' component={Contact} />
+     
 
-      {/* reference array and pass it down as props */}
-      {/* <Cake deleteCake={ this.deleteCake } cake={ this.state.todos } /> */}
-      
-    </div>
+
+        <h1 className="center white-text">Wedding planning helper</h1>
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+        <AddTodo addTodo={this.addTodo} />
+
+        {/* <AddItem addItemFunc={this.addItemFunc}/>
+        {/* reference array and pass it down as props */}
+        {/* <Cake deleteCake={ this.deleteCake } cake={ this.state.todos } /> */}
+        
+      </div>
+    </BrowserRouter>
   );
   }
 }
