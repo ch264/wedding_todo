@@ -4,8 +4,13 @@ import React, { Component } from 'react';
 import Cake from './Cake';
 import AddItem from './addItem';
 
-import Todos from './Todos';
-import AddTodo from './addForm'
+import Todos from './components/Todos';
+import AddTodo from './components/addForm';
+
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Navbar from './components/Navbar';
 
 
 class App extends Component {
@@ -69,13 +74,18 @@ class App extends Component {
   render() {
   return (
     <div className="App container">
+      <Navbar />
       <h1 className="center white-text">Wedding planning helper</h1>
       <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       <AddTodo addTodo={this.addTodo} />
+    
+    
+    
+      {/* <AddItem addItemFunc={this.addItemFunc}/>
 
       {/* reference array and pass it down as props */}
-      <Cake deleteCake={ this.deleteCake } cake={ this.state.todos } />
-      <AddItem addItemFunc={this.addItemFunc}/>
+      {/* <Cake deleteCake={ this.deleteCake } cake={ this.state.todos } /> */}
+      
     </div>
   );
   }
