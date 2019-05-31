@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Color from '../higherOrderComp/Color'
+
 const About = () => {
 	return (
 		<div className="container">
@@ -9,4 +11,4 @@ const About = () => {
 	)
 }
 
-export default About
+export default Color(About)
