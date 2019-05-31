@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Todos = ({todos, deleteTodo}) => {
 
@@ -6,9 +7,14 @@ const Todos = ({todos, deleteTodo}) => {
 		todos.map(todo => {
 			return (
 				// react expects a unique key on every surrounding element that is returned
-				<div className="collection-item" key={todo.id}>
-					<span onClick={() => {deleteTodo(todo.id)}}>{todo.content}</span>
-				</div>
+				
+					<div className="collection-item" key={todo.id}>
+						{/* <span onClick={() => {deleteTodo(todo.id)}}>{todo.content}</span> */}
+						
+						<span>{todo.content}</span>
+		
+					</div>
+	
 			)
 		})
 	) : (

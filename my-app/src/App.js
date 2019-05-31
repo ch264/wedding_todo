@@ -14,6 +14,8 @@ import Navbar from './components/Navbar';
 
 import { BrowserRouter, Route } from 'react-router-dom'
 
+import Todo from './components/Todo'
+
 
 class App extends Component {
   state = {
@@ -82,6 +84,8 @@ class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/about' component={About} />
         <Route path='/contact' component={Contact} />
+        <Route path="/:todo_id" component={Todo} />
+        
      
 
 
