@@ -12,7 +12,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Todo from './components/Todo'
 
@@ -80,12 +80,14 @@ class App extends Component {
     <BrowserRouter>
       <div className="App container">
         <Navbar />
-        {/* when user goes to path load in the component */}
-        <Route exact path='/' component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/contact' component={Contact} />
-        <Route path="/:todo_id" component={Todo} />
-        
+        {/* only loads up 1 component */}
+        <Switch>
+          {/* when user goes to path load in the component */}
+          <Route exact path='/' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/contact' component={Contact} />
+          <Route path="/:todo_id" component={Todo} />
+        </Switch>
      
 
 
