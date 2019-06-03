@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // conenct is a function to bring back a higher order component
 import { connect } from 'react-redux'
 
+
 class Home extends Component {
 	render() {
 		console.log(this.props)
@@ -12,6 +13,7 @@ class Home extends Component {
 				<h4 className="center">Home</h4>
 				<p>Welcome to the Wedding Planning todo app. This app can help you organise your big day</p>
 			</div>
+			
 		)
 	}
 }
