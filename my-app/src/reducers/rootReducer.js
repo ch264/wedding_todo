@@ -1,5 +1,8 @@
 const initState = {
-	todos: []
+	todos: [
+		{ content: 'photographer', id: 3},
+    { content: 'videographer', id: 4}
+	]
 }
 
 // give default value to state for first time run
