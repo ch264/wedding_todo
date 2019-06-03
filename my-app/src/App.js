@@ -1,8 +1,8 @@
 // Root component
 
 import React, { Component } from 'react';
-import Cake from './Cake';
-import AddItem from './addItem';
+// import Cake from './Cake';
+// import AddItem from './addItem';
 
 import Todos from './components/Todos';
 import AddTodo from './components/addForm';
@@ -25,26 +25,26 @@ class App extends Component {
     ]
   }
 
-  addItemFunc = (item) => {
-    // generate random id number between 0 and 1
-    item.id = Math.random();
-    // create copy of array with spread operator and add on new item. Do not edit state outside of setState.
-    let cake = [...this.state.cake, item];
+  // addItemFunc = (item) => {
+  //   // generate random id number between 0 and 1
+  //   item.id = Math.random();
+  //   // create copy of array with spread operator and add on new item. Do not edit state outside of setState.
+  //   let cake = [...this.state.cake, item];
 
-    this.setState({
-      item: cake
-    })
-  }
+  //   this.setState({
+  //     item: cake
+  //   })
+  // }
 
-  deleteCake = (id) => {
-    let cake = this.state.cake.filter(cake => {
-      // id of cake we are cycling through is not equal to id.
-      return cake.id !== id
-    });
-    this.setState({
-      cake: cake
-    })
-  }
+  // deleteCake = (id) => {
+  //   let cake = this.state.cake.filter(cake => {
+  //     // id of cake we are cycling through is not equal to id.
+  //     return cake.id !== id
+  //   });
+  //   this.setState({
+  //     cake: cake
+  //   })
+  // }
 
   deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo => {
@@ -86,7 +86,8 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />
           <Route path='/contact' component={Contact} />
-          <Route path="/:todo_id" component={Todo} />
+          {/* <Route path="/:todo_id" component={Todo} /> */}
+          <Route path="/todo" component={Todo} />
         </Switch>
      
 

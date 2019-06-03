@@ -15,18 +15,31 @@ class Todo extends Component {
 	// 	})
 	// }
 
+	
+	handleClick = () => {
+		this.props.deleteTodo(this.props.todo.id);
+		// redirect user after click 
+		this.props.history.push('/');
+	}
+
 	render() {
+		console.log(this.props)
 		const todos = this.props.todo ? (
 			<div className="todo">
 				<h4 className="center">{this.props.todo.content}</h4>
+				<div className="center">
 			</div>
+			</div>
+			
 		) : (
 			<div className="center">Loading Todo...</div>
 		)
 		return (
 			<div className="container">
 				<h4>{this.props.todo}</h4>
+				<button className="btn grey" onClick={this.handleClick}>Delete</button>
 			</div>
+			
 		)
 	}
 }
@@ -40,4 +53,13 @@ const mapStateToProps = (state, ownProps) => {
 	}
 }
 
-export default connect(mapStateToProps)(Todo)
+const mapDispatchToProps = (dispatch) => {
+	// return what we want to map to the functions of this component
+	return {
+		// id of post we want to delete. action, payload we want to send is id. on click make a dispatch and send this function to the root reducer
+		deleteTodo: (id) => { dispatch({type: 'DELETE_TODO', id})}
+	}
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Todo)
