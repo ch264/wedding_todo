@@ -2,4 +2,6 @@ buttons:
   - title: Run tests
     action: "run_tests"
     description: Run your tests
-EOF
+    links:
+      - name: "View Action on GitHub"
+        value: https://www.actionspanel.app
