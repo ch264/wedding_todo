@@ -1,0 +1,11 @@
+on:
+  repository_dispatch:
+    types: [run_tests]
+name: Run tests
+jobs:
+  test:
+    name: Run your tests
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "I just ran all your tests!"
